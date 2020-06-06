@@ -36,10 +36,10 @@ const Navigation = () => {
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Skills</a>
+                        <a href="#skills">Skills</a>
                     </li>
                     <li>
-                        <a href="#">Projects</a>
+                        <a href="#projects">Projects</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>

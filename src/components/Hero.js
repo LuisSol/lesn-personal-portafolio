@@ -8,13 +8,25 @@ const HeroContent = styled.section`
     justify-content: flex-end;
     align-items: center;
     height: 500px;
-    position: relative;
+    position: relative;    
+    &:after{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 8;
+        bottom: 0;
+        content: '';
+        transform-origin: right bottom;
+        transform: skewY(-2deg);
+        background-color: white;
+    }
 `
 const MainTitle = styled.div`
     position: absolute;
     width: 350px;
     bottom: 15%;
     left: 30px;
+    z-index: 10;
     margin-left: 20px;
     h1 {
         font-size: 1.7rem;
@@ -23,6 +35,7 @@ const MainTitle = styled.div`
         font-weight: 300;
     }
 `
+
 const Hero = () => {
     return (
         <header>

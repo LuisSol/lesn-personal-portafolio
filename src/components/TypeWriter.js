@@ -9,12 +9,11 @@ const blink = keyframes`
         border-right-color: rgba(0,0,0,0);
     }
 `
-
 const Greet = styled.span`    
     display: flex;
     align-items: center;
     height: 400px; 
-    z-index: -1;
+    z-index: 9;
     margin-right: 70px;
     color: white;
     text-shadow:
@@ -39,18 +38,15 @@ const fontSizes = {
     9: '17rem',
     10: '10rem',
 }
-
 const grettings = [
                    'Hi', 'Hola', 'Hello', 'Bonjour',
                    'Guten tag', 'Hallo', 'Shalom',
                    'Namaste', 'Olá', 'Nǐ hǎo', 'Konnichiwa'
                   ]
-
 let isDeleting = false;
 let waitingTime = 300;
 
 const TypeWriter = () => {
-
     const reducer = (state, action) => {
         switch(action.type) {
             case 'CHANGE_GREET':
@@ -88,9 +84,7 @@ const TypeWriter = () => {
                 waitingTime = 1500;
                 isDeleting = true;
             }
-        }         
-        console.log('in Use effect');
-        
+        }        
         const typer = setTimeout(() => {
             dispatch({
                 type: 'CHANGE_GREET',
