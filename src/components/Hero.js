@@ -12,8 +12,8 @@ const HeroContent = styled.section`
     &:after{
         position: absolute;
         width: 100%;
-        height: 100%;
-        z-index: 8;
+        height: 20%;
+        z-index: 3;
         bottom: 0;
         content: '';
         transform-origin: right bottom;
@@ -26,7 +26,7 @@ const MainTitle = styled.div`
     width: 350px;
     bottom: 15%;
     left: 30px;
-    z-index: 10;
+    z-index: 5;
     margin-left: 20px;
     h1 {
         font-size: 1.7rem;
@@ -45,6 +45,7 @@ const Hero = () => {
                     <h1>My name is Luis Enrique</h1>
                     <p>I'm a Full stack javascript developer, i love to create usefull and fun to use Apps. 
                     I belive that a smile in an user face is the best reward of all.</p>
+                    <button>Contact me</button>
                 </MainTitle>
                 <TypeWriter />
             </HeroContent>

@@ -12,6 +12,7 @@ const SkillShow = styled.section`
     color: white;
     padding: 50px 45px 0px 45px;
     position: relative;
+    z-index: 2;
     .title { 
         position: absolute;
         top: 2rem;

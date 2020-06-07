@@ -13,7 +13,7 @@ const Greet = styled.span`
     display: flex;
     align-items: center;
     height: 400px; 
-    z-index: 9;
+    z-index: 4;
     margin-right: 70px;
     color: white;
     text-shadow:
