@@ -32,8 +32,8 @@ body {
 }
 .contact-modal {
   position: relative;
-  width: 400px;
-  height: 250px;
+  width: 350px;
+  height: 450px;
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;      

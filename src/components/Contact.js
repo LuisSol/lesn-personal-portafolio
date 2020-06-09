@@ -104,7 +104,7 @@ const Contact = () => {
                 </div>
             </Media>
             <Footer id="contact">
-                <small>All rights reserved. | Luis Enrique Solis Navarro</small>
+                <small>All rights reserved. | Designed by Luis Enrique Solis Navarro</small>
             </Footer>            
         </ContactView>        
     );
