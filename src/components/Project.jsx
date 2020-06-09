@@ -6,7 +6,6 @@ const ProjectDetail = styled.div`
     height: 410px;
 `
 
-
 const Project = ({title, github, link, detail, android, ios}) => {
     return (
         <ProjectDetail>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
 import styled, { keyframes } from 'styled-components';
  
 const blink = keyframes`
@@ -64,9 +64,9 @@ const TypeWriter = () => {
         }        
     }    
     const [{currentGreet, greetText}, dispatch] = 
-    React.useReducer(reducer, { currentGreet: 0, greetText: ''});   
+    useReducer(reducer, { currentGreet: 0, greetText: ''});   
 
-    React.useEffect(() => { 
+    useEffect(() => { 
         if(isDeleting) {
             waitingTime = 100;
             if(greetText === '') {

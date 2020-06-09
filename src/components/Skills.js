@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick';
 import Skill from './Skill';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -79,7 +78,7 @@ const Skills = () => {
 
     return (
         <SkillShow>
-            <h1 className="title">Skills</h1>
+            <h1 className="title" id="skills">Skills</h1>            
             <Slider
                 slidesToShow={1}
                 slidesToScroll={1}
@@ -94,7 +93,7 @@ const Skills = () => {
             {            
             skills.map(skill => <Skill key={skill.id} {...skill} />)            
             }
-            </Slider>            
+            </Slider>                        
         </SkillShow>
     );
 }

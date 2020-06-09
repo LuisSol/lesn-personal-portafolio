@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import ContactModal from './ContactModal';
 import { ReactComponent as ExercismLogo } from './svg/exercismlogo.svg';
 import { ReactComponent as CodeWarsLogo } from './svg/codewars.svg';
 import { ReactComponent as TwitterLogo } from './svg/twitter.svg';
@@ -7,8 +8,11 @@ import { ReactComponent as LinkedinLogo } from './svg/linkedin.svg';
 import { ReactComponent as GithubLogo } from './svg/github.svg';
 
 const ContactView = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: 450px;
-    padding: 80px 45px 10px 45px;
+    padding: 50px 45px 10px 45px;
     background-color: #232C39;
     position: relative;    
     text-align: center;
@@ -50,8 +54,11 @@ const Media = styled.div`
 const Contact = () => {
     return (        
         <ContactView>
-            <h1 className="slogan">LET ME HELP YOU<br />TO CREATE</h1>
-            <button>Contact me</button>
+            <div>
+                <h1 className="slogan">LET ME HELP YOU<br />TO CREATE</h1>
+                <br />
+                <ContactModal />
+            </div>
             <Media>
                 <div className="media-card">
                     <a 
@@ -96,7 +103,7 @@ const Contact = () => {
                     <small>git-hub</small>
                 </div>
             </Media>
-            <Footer>
+            <Footer id="contact">
                 <small>All rights reserved. | Luis Enrique Solis Navarro</small>
             </Footer>            
         </ContactView>        

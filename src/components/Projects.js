@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Slider from 'react-slick';
 import Project from './Project';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -158,7 +157,7 @@ const Projects = () => {
     return (
         <main>
             <ProjectsView>
-                <h1 className="title">Projects</h1>                
+                <h1 className="title" id="projects">Projects</h1>                
                 <button className="slid-btn prev-btn" onClick={previous}>&lt;</button>
                 <button className="slid-btn next-btn" onClick={next}>&gt;</button>
                 <Slider
