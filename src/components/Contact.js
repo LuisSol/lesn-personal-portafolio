@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import ContactModal from './ContactModal';
+import ContactBtn from './ContactBtn'
 import { ReactComponent as ExercismLogo } from './svg/exercismlogo.svg';
 import { ReactComponent as CodeWarsLogo } from './svg/codewars.svg';
 import { ReactComponent as TwitterLogo } from './svg/twitter.svg';
@@ -51,13 +51,15 @@ const Media = styled.div`
     }
 `
 
-const Contact = () => {
+const Contact = ({ toggleModal }) => {
     return (        
         <ContactView>
             <div>
                 <h1 className="slogan">LET ME HELP YOU<br />TO CREATE</h1>
                 <br />
-                <ContactModal />
+                <ContactBtn 
+                    toggleModal={toggleModal}
+                />
             </div>
             <Media>
                 <div className="media-card">

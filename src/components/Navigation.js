@@ -6,6 +6,7 @@ const LazyPDFView = React.lazy(() => import('./PDFView'));
 const NavBar = styled.div`
     height: 7vh;
     background-color: #FFFFFF;
+    padding-right: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

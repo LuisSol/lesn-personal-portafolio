@@ -34,43 +34,43 @@ const SkillShow = styled.section`
 const skills = [
     { 
         id: 'js2020lesn',
-        img: '/images/javaScript.png',
+        img: '/images/javascript.png',
         alt: 'java script logo',
         title: 'Javascript',
-        subtitle: 'ES6+, Async, OOP...',
-        detail: 'I have coded in modern javascript'
+        subtitle: 'ES6+, Async, Json...',
+        detail: `I have modern javascript coding skills, from factory functions, the module pattern, IIFE's, HOF's, higher order array functions (map, filter, reduce) to promises, generators and async await.`
     },
     { 
         id: 'nex2020lesn',
-        img: '/images/javaScript.png',
-        alt: 'java script logo',
+        img: '/images/nodejsexp.png',
+        alt: 'node express logo',
         title: 'Node.js / Express',
-        subtitle: 'API, Middleware, OAuth...',
-        detail: 'I have coded in modern javascript'
+        subtitle: 'Middleware, API, OAuth...',
+        detail: 'I\'m impresed by the jump of javascript from the Front End to the Back End, by embrasing the Node.js ecosystem i found a powerfull tool to build amazing apps and a never ending community of developers creating amazing npm modules.'
     },
     { 
         id: 'ren2020lesn',
-        img: '/images/javaScript.png',
-        alt: 'java script logo',
+        img: '/images/react.png',
+        alt: 'react redux logo',
         title: 'React / React Native',
-        subtitle: 'JSX, SSR, Hooks...',
-        detail: 'I have coded in modern javascript'
+        subtitle: 'Hooks, SSR, Redux...',
+        detail: 'I just love the React library (framewotk, with the help of other libraries) i\'m totally invested in the react way of creating and composing UI/UX interfaces. I have developed all my projects in the react ecosystem for the Browser and for mobile devices with react native.'
     },
     { 
         id: 'ror2020lesn',
-        img: '/images/javaScript.png',
-        alt: 'java script logo',
+        img: '/images/ruby.png',
+        alt: 'ruby rails logo',
         title: 'Ruby / Ruby on Rails',
         subtitle: 'ActiveRecord, OAuth, API...',
-        detail: 'I have coded in modern javascript'
+        detail: 'Although my heart belongs to the javascript ecosystem, i have experience also with the Ruby on Rails Framework, even if the javascript exosystem is more flexible, theres one thing that can\'t be denied about Rails, it just works with fewer lines of code'
     },
     { 
-        id: 'ror2020lesn',
-        img: '/images/javaScript.png',
-        alt: 'java script logo',
+        id: 'htm52020lesn',
+        img: '/images/htmlcss.png',
+        alt: 'html css logo',
         title: 'HTML5 / CSS3',
-        subtitle: 'Flexbox, Styling, Animations...',
-        detail: 'I have coded in modern javascript'
+        subtitle: 'Flexbox, Sass, Animations...',
+        detail: 'I belive that a successful App should look amazing, thats why i have gain strong knowledge of CSS, so my projects will not be only useful, but pretty and fun to use.'
     },
 ]
 
@@ -91,7 +91,7 @@ const Skills = () => {
                 speed={500}                
             >            
             {            
-            skills.map(skill => <Skill key={skill.id} {...skill} />)            
+                skills.map(skill => <Skill key={skill.id} {...skill} />)            
             }
             </Slider>                        
         </SkillShow>

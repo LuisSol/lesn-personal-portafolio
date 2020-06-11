@@ -4,28 +4,6 @@ import styled from 'styled-components';
 import useFormValidation from './utils/useFormValidation';
 import validateContactForm from './utils/validateContactForm';
 
-const ContacMeBtn = styled.button`
-    margin-top: .5rem;
-    width: 8rem;
-    height: 2.5rem;
-    border-radius: 10px; 
-    border: 1px solid #CCC;
-    cursor: pointer;  
-    font-size: 1rem; 
-    background: rgb(241,241,241);
-    background: linear-gradient(180deg, rgba(241,241,241,1) 0%, rgba(193,193,193,1) 65%);
-    &:focus {
-        outline: none;
-    }
-    &:hover {
-        background: rgb(231,231,231);
-        background: linear-gradient(180deg, rgba(231,231,231,1) 0%, rgba(170,170,170,1) 65%);
-    }
-    &:active {
-        background: rgb(200,200,200);
-        background: linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(129,129,129,1) 65%);
-    }
-`
 const ContactForm = styled.form`
     height: 100%;
     display: flex;
@@ -90,18 +68,12 @@ const initialValues = {
     message: '',
 }
 
-const ContactModal = () => {
-    const [modalOpen, setModalOpen] = useState(false);
-    const toggleModal = () => {
-        setModalOpen(!modalOpen);
-    }
+const ContactModal = ({ modalOpen, toggleModal }) => {    
     const {handleChange, handleSubmit, handleBlur,
            values, errors, isSubmiting, subjectCharLeft, messageCharLeft} = 
     useFormValidation(initialValues, validateContactForm, toggleModal)
 
-    return (
-        <>
-            <ContacMeBtn onClick={toggleModal}>Contact me</ContacMeBtn>                  
+    return (                              
             <Modal
                 closeTimeoutMS={300}    
                 className="contact-modal"            
@@ -158,8 +130,7 @@ const ContactModal = () => {
                         disabled={isSubmiting}
                     />
                </ContactForm> 
-            </Modal>        
-        </>
+            </Modal>         
     )
 }
 

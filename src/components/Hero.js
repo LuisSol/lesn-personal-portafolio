@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from './Navigation'
 import TypeWriter from './TypeWriter'
 import styled from 'styled-components';
-import ContactModal from './ContactModal'
+import ContactBtn from './ContactBtn'
 
 const HeroContent = styled.section`
     display: flex;
@@ -37,16 +37,18 @@ const MainTitle = styled.div`
     }
 `
 
-const Hero = () => {
+const Hero = ({ toggleModal }) => {
     return (
         <header>
             <Navigation />
             <HeroContent>
                 <MainTitle>
                     <h1>My name is Luis Enrique</h1>
-                    <p>I'm a Full stack javascript developer, i love to create usefull and fun to use Apps. 
+                    <p>I'm a Full stack javascript developer, i love to create useful and fun to use Apps. 
                     I belive that a smile in an user face is the best reward of all.</p>
-                    <ContactModal />                    
+                    <ContactBtn 
+                        toggleModal={toggleModal}
+                    />                    
                 </MainTitle>
                 <TypeWriter />
             </HeroContent>

@@ -9,8 +9,8 @@ const SkillContainer = styled.div`
 `
 const SkillDetail = styled.div`
     position: relative;
-    top: -5rem;
-    width: 400px;    
+    top: -4rem;
+    width: 450px;    
     h1 {
         margin-top: 0;
     }
