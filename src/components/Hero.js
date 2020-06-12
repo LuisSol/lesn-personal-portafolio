@@ -28,12 +28,17 @@ const MainTitle = styled.div`
     bottom: 15%;
     left: 30px;
     z-index: 5;
-    margin-left: 20px;
     h1 {
         font-size: 1.7rem;
     }
     p {
         font-weight: 300;
+    }
+    @media (max-width: 380px) {
+        width: 300px;
+    }
+    @media (max-width: 320px) {
+        width: 270px;
     }
 `
 

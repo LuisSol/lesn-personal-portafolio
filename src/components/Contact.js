@@ -12,7 +12,7 @@ const ContactView = styled.section`
     flex-direction: column;
     justify-content: space-around;
     height: 450px;
-    padding: 50px 45px 10px 45px;
+    padding: 50px 30px 10px 30px;
     background-color: #232C39;
     position: relative;    
     text-align: center;
@@ -21,6 +21,14 @@ const ContactView = styled.section`
         margin: 0;      
         font-size: 4rem;
     }
+    @media (max-width: 650px) {
+        .slogan {            
+            font-size: 3rem;
+        }
+        #contact {
+            font-size: .9rem;
+        }
+    } 
 `
 const Footer = styled.footer`
     position: absolute;
@@ -48,6 +56,11 @@ const Media = styled.div`
     .logo:hover {
         fill: rgb(230, 230, 230);
         transform: scale(1.2);    
+    }
+    @media (max-width: 650px) {
+        .media-card {            
+            margin: 0 .5rem;
+        }
     }
 `
 

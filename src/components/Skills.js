@@ -9,7 +9,7 @@ const SkillShow = styled.section`
     height: 400px;
     background-color: #232C39;
     color: white;
-    padding: 50px 45px 0px 45px;
+    padding: 50px 30px 0px 30px;
     position: relative;
     z-index: 2;
     .title { 

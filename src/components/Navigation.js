@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 
 const LazyPDFView = React.lazy(() => import('./PDFView'));
+
 const NavBar = styled.div`
     height: 7vh;
     background-color: #FFFFFF;
@@ -10,6 +11,9 @@ const NavBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 750px) {
+        display: none;
+    }
 `
 const Logo = styled.div`    
     font-family: 'Monoton', cursive;
@@ -26,7 +30,7 @@ const Nav = styled.nav`
         font-weight: 300;
         color: #000;
         margin: 0 1.5rem;
-    }
+    }    
 `
 const ResumeBtn = styled.button`
     background-color: white;

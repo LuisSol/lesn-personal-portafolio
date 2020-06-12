@@ -14,13 +14,13 @@ const Greet = styled.span`
     align-items: center;
     height: 400px; 
     z-index: 4;
-    margin-right: 70px;
+    margin-right: 30px;
     color: white;
     text-shadow:
-    -1px -1px 2px rgba(0,0,0,0.1),  
-    1px -1px 2px rgba(0,0,0,0.1),
-    -1px 1px 2px rgba(0,0,0,0.1),
-    1px 1px 2px rgba(0,0,0,0.1);
+    -1px -1px 2px rgba(70,70,70,0.1),  
+    1px -1px 2px rgba(70,70,70,0.1),
+    -1px 1px 2px rgba(70,70,70,0.1),
+    1px 1px 2px rgba(70,70,70,0.1);
     border-right: 3px solid rgba(0,0,0,.1);
     animation: ${blink} 600ms ease-out infinite;
 `
@@ -30,12 +30,12 @@ const fontSizes = {
     1: '25rem',
     2: '23rem',
     3: '15rem',
-    4: '11.5rem',
+    4: '9rem',
     5: '22rem',
     6: '15rem',
     7: '12rem',
     8: '23rem',
-    9: '17rem',
+    9: '15rem',
     10: '10rem',
 }
 const grettings = [

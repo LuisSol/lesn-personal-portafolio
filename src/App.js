@@ -8,8 +8,11 @@ import ContactModal from './components/ContactModal'
 
 const MainContainer = styled.div`
   margin: 0 auto;
-  width: 1000px;
-  
+  width: 1024px;
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 function App() {
