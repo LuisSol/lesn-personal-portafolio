@@ -1,22 +1,25 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleModal } from '../../redux/actions/modalActions'
 
-const useFormValidation = (initialValues, validationFunction, modalFunc = null) => {
+const useFormValidation = (initialValues, validationFunction) => {
     const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
     const [isSubmiting, setSubmiting] = useState(false);
     const [subjectCharLeft, setSubjectCharLeft] = useState(100);
     const [messageCharLeft, setMessageCharLeft] = useState(300);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if(isSubmiting){
             if(errors.isEmpty()){
                 //send email
-                modalFunc();
+                dispatch(toggleModal());
                 setValues(initialValues);
             }
             setSubmiting(false);
         }
-    }, [errors, isSubmiting, modalFunc, initialValues]);
+    }, [errors, isSubmiting, initialValues, dispatch]);
 
     const handleSubmit =  (e) =>{
         e.preventDefault();

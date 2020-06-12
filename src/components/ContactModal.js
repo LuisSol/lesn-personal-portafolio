@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-modal';
 import styled from 'styled-components';
 import useFormValidation from './utils/useFormValidation';
 import validateContactForm from './utils/validateContactForm';
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleModal } from '../redux/actions/modalActions'
 
 const ContactForm = styled.form`
     height: 100%;
@@ -68,10 +70,13 @@ const initialValues = {
     message: '',
 }
 
-const ContactModal = ({ modalOpen, toggleModal }) => {    
+const ContactModal = () => {    
+    const modalOpen = useSelector( (state) => state.modalOpen );
+    const dispatch = useDispatch();
+
     const {handleChange, handleSubmit, handleBlur,
            values, errors, isSubmiting, subjectCharLeft, messageCharLeft} = 
-    useFormValidation(initialValues, validateContactForm, toggleModal)
+    useFormValidation(initialValues, validateContactForm);
 
     return (                              
             <Modal
@@ -79,7 +84,7 @@ const ContactModal = ({ modalOpen, toggleModal }) => {
                 className="contact-modal"            
                 overlayClassName="overlay"
                 isOpen={modalOpen}
-                onRequestClose={toggleModal}
+                onRequestClose={() => dispatch(toggleModal())}
             >
                <ContactForm onSubmit={handleSubmit}>                    
                     <label htmlFor="email">email: </label>

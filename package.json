@@ -10,9 +10,11 @@
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
     "react-pdf": "^4.1.0",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
     "react-simple-img": "^2.3.9",
     "react-slick": "^0.26.1",
+    "redux": "^4.0.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1"
   },

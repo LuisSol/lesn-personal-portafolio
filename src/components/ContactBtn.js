@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux'
+import { toggleModal } from '../redux/actions/modalActions'
 
 const ContacMeBtn = styled.button`
     margin-top: .5rem;
@@ -40,9 +42,11 @@ const ContacMeBtn = styled.button`
     }
 `
 
-const ContactBtn = ({toggleModal}) => {
+const ContactBtn = () => {
+    const dispatch = useDispatch();
+
     return (
-        <ContacMeBtn onClick={toggleModal}>Contact me</ContacMeBtn> 
+        <ContacMeBtn onClick={() => dispatch(toggleModal())}>Contact me</ContacMeBtn> 
     );
 }
 

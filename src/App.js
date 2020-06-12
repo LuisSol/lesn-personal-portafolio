@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Hero from './components/Hero'
 import Skills from './components/Skills'
@@ -13,23 +13,14 @@ const MainContainer = styled.div`
 `;
 
 function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const toggleModal = () => setModalOpen(!modalOpen);
   
   return (
     <MainContainer>
-      <Hero 
-        toggleModal={toggleModal}         
-      />
+      <Hero />
       <Skills />
       <Projects />
-      <Contact 
-        toggleModal={toggleModal}  
-      />
-      <ContactModal 
-        modalOpen={modalOpen} 
-        toggleModal={toggleModal}
-      />
+      <Contact />
+      <ContactModal />
     </MainContainer>
   );
 }
