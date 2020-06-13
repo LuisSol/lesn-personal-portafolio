@@ -20,13 +20,12 @@ const animate = keyframes`
 const ProjectsView = styled.section`    
     height: 500px;
     color: black;    
-    padding: 100px 45px 0px 45px;
+    padding: 100px 30px 0px 30px;
     position: relative;
     z-index: 1;
     .title { 
         position: absolute;
         top: 2rem;
-        left: 45px;
         font-size: 1.7rem;
         z-index: 5;
     }
@@ -34,35 +33,20 @@ const ProjectsView = styled.section`
         position: absolute;        
         content: '';
         left: 0;
-        bottom: -3rem;
+        bottom: -3.5rem;
         background-color: white;
         width: 100%;
         height: 15%;
         transform-origin: left bottom;
-        transform: skewY(-2deg);
+        transform: skewY(-3deg);
         z-index: -1;
-    }
-    .slid-btn {
-        position: absolute;
-        top: 55%;
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: #666;     
-    }
-    .next-btn {
-        right: 1rem; 
-    }   
-    .prev-btn {
-        left: 1rem;   
     }
     .scroll-indicator {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        top: -2rem;
+        top: -1rem;
     }
     .indicator {
         position: relative;
@@ -146,22 +130,12 @@ const projects = [
 ]
 
 const Projects = () => {
-    const slider = React.useRef(null);
-    const previous = () => {
-        slider.current.slickPrev();
-    }
-    const next = () => {
-        slider.current.slickNext();
-    }
 
     return (
         <main>
             <ProjectsView>
                 <h1 className="title" id="projects">Projects</h1>                
-                <button className="slid-btn prev-btn" onClick={previous}>&lt;</button>
-                <button className="slid-btn next-btn" onClick={next}>&gt;</button>
                 <Slider
-                    ref={slider} 
                     slidesToShow={1}
                     slidesToScroll={1}
                     speed={400}

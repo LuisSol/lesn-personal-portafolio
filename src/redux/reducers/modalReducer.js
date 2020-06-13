@@ -1,7 +1,8 @@
 import actions from '../actions/actionTypes'
 
 const initialState = {
-    modalOpen: false
+    modalOpen: false,
+    pdfModalOpen: false
 }
 
 const modalReducer = (state = initialState, action) => {
@@ -9,6 +10,10 @@ const modalReducer = (state = initialState, action) => {
         case actions.TOGGLE_MODAL:
             return {
                 modalOpen: !state.modalOpen
+            }
+        case actions.TOGGLE_PDF_MODAL:
+            return {
+                pdfModalOpen: !state.pdfModalOpen
             }
         default:
             return state;

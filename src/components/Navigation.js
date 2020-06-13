@@ -1,17 +1,16 @@
-import React, { Suspense, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Modal from 'react-modal';
-
-const LazyPDFView = React.lazy(() => import('./PDFView'));
+import { togglePDFModal } from '../redux/actions/modalActions'
+import { useDispatch } from 'react-redux';
 
 const NavBar = styled.div`
-    height: 7vh;
+    height: 4rem;
     background-color: #FFFFFF;
     padding-right: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
         display: none;
     }
 `
@@ -46,10 +45,7 @@ const ResumeBtn = styled.button`
 `
 
 const Navigation = () => {
-    const [showResume, setShowResume] = useState(false);
-    const toggleShowResume = () => {
-        setShowResume(!showResume);
-    }
+    const dispatch = useDispatch();
 
     return (
         <NavBar>
@@ -57,21 +53,7 @@ const Navigation = () => {
             <Nav>
                 <ul>
                     <li>    
-                        <ResumeBtn onClick={toggleShowResume}>Resume</ResumeBtn>
-                        {
-                            showResume && 
-                            <Modal
-                                closeTimeoutMS={300}    
-                                className="pdf-modal"            
-                                overlayClassName="overlay"
-                                isOpen={showResume}
-                                onRequestClose={toggleShowResume}
-                            >
-                                <Suspense fallback={<div>Loading ...</div>}>
-                                    <LazyPDFView />
-                                </Suspense>
-                            </Modal>
-                        }
+                        <ResumeBtn onClick={() => dispatch(togglePDFModal())}>Resume</ResumeBtn>                        
                     </li>
                     <li>
                         <a href="#skills">Skills</a>

@@ -1,9 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Slider from 'react-slick';
 import Skill from './Skill';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+const animate = keyframes`
+    0% {
+        border-color: #EEE;
+    }
+    20% {
+        border-color: #EEE;
+    }
+    20.1%, 100% {
+        border-color: #99;
+    }
+`
 
 const SkillShow = styled.section`
     height: 400px;
@@ -13,21 +25,87 @@ const SkillShow = styled.section`
     position: relative;
     z-index: 2;
     .title { 
+        z-index: 5;
         position: absolute;
-        top: 2rem;
+        top: 2.5rem;
         font-size: 1.7rem;
     }
     &:after{
         position: absolute;
         width: 100%;
         height: 15%;
-        bottom: -3rem;
+        bottom: -3.5rem;
         left: 0;
         content: '';
         z-index: -1;
         transform-origin: right bottom;
-        transform: skewY(2deg);
+        transform: skewY(3deg);
         background-color: #232C39;
+    }
+    .scroll-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -3rem;
+    }
+    .indicator {
+        position: relative;
+        display: inline-block;
+        width: 9px;
+        height: 9px;        
+    }
+    .indicator span{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid #6666;
+    }
+    .left-indicator {        
+        margin-right: .5rem;        
+        transform: rotate(45deg);
+    }    
+    .left-indicator span {      
+        border-left: 2px solid #6666;
+        animation: ${animate} 3s linear infinite;
+    }
+    .left-indicator span:nth-child(1) {
+        left: -5px;
+        bottom: -5px;
+        animation-delay: 0.2s;
+    }
+    .left-indicator span:nth-child(2) {
+        left: -10px;
+        bottom: -10px;
+        animation-delay: 0.4s;
+    }
+    .left-indicator span:nth-child(3) {
+        left: -15px;
+        bottom: -15px;
+        animation-delay: 0.6s;
+    }
+    .right-indicator {           
+        margin-left: .5rem; 
+        transform: rotate(-45deg);
+    }
+    .right-indicator span{
+        border-right: 2px solid #6666;
+        animation: ${animate} 3s linear infinite;
+    }
+    .right-indicator span:nth-child(1) {
+        right: -5px;
+        bottom: -5px;
+        animation-delay: 0.2s;
+    }
+    .right-indicator span:nth-child(2) {
+        right: -10px;
+        bottom: -10px;
+        animation-delay: 0.4s;
+    }
+    .right-indicator span:nth-child(3) {
+        right: -15px;
+        bottom: -15px;
+        animation-delay: 0.6s;
     }        
 `
 
@@ -60,7 +138,7 @@ const skills = [
         id: 'ror2020lesn',
         img: '/images/ruby.png',
         alt: 'ruby rails logo',
-        title: 'Ruby / Ruby on Rails',
+        title: 'Ruby /Rails',
         subtitle: 'ActiveRecord, OAuth, API...',
         detail: 'Although my heart belongs to the javascript ecosystem, i have experience also with the Ruby on Rails Framework, even if the javascript exosystem is more flexible, theres one thing that can\'t be denied about Rails, it just works with fewer lines of code'
     },
@@ -83,9 +161,9 @@ const Skills = () => {
                 slidesToShow={1}
                 slidesToScroll={1}
                 arrows={false}
-                dots={true}
+                dots={false}
                 autoplay={true}
-                autoplaySpeed={8000}
+                autoplaySpeed={9000}
                 pauseOnHover={true}
                 pauseOnDotsHover={true}
                 speed={500}                
@@ -93,7 +171,22 @@ const Skills = () => {
             {            
                 skills.map(skill => <Skill key={skill.id} {...skill} />)            
             }
-            </Slider>                        
+            </Slider>
+            <div className="scroll-indicator">
+                <div className="indicator left-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                    <small>scroll</small>
+                <div className="indicator right-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>                         
         </SkillShow>
     );
 }

@@ -28,7 +28,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, .9);
-  z-index: 10;
+  z-index: 20;
 }
 .contact-modal {
   position: relative;
@@ -65,4 +65,9 @@ body {
   outline: none;
   padding: 20px;
   -webkit-overflow-scrolling: touch; 
+}
+@media (max-width: 380px) {
+  .pdf-modal {
+    width: 100%;
+  }
 }

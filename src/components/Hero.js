@@ -18,7 +18,7 @@ const HeroContent = styled.section`
         bottom: 0;
         content: '';
         transform-origin: right bottom;
-        transform: skewY(-2deg);
+        transform: skewY(-3deg);
         background-color: white;
     }
 `
