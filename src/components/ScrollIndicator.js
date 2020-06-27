@@ -16,8 +16,7 @@ const ScrollIndicator = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: -1rem;    
+    position: relative;   
     .indicator {
         position: relative;
         display: inline-block;
@@ -78,9 +77,9 @@ const ScrollIndicator = styled.div`
     }
 `
 
-export default () => {
+export default ({ top }) => {
     return (
-        <ScrollIndicator>
+        <ScrollIndicator style={top}>
             <div className="indicator left-indicator">
                 <span></span>
                 <span></span>

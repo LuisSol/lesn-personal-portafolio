@@ -10,12 +10,8 @@ import PDFModal from './components/PDFModal'
 
 const MainContainer = styled.div`
   margin: 0 auto;
-  width: 1024px;
+  width: 100%;
   position: relative;
-  @media (max-width: 1024px) {
-    width: 100%;
-    margin: 0;
-  }
 `;
 
 function App() {

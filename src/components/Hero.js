@@ -4,12 +4,17 @@ import TypeWriter from './TypeWriter'
 import styled from 'styled-components';
 import ContactBtn from './ContactBtn'
 
-const HeroContent = styled.section`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 500px;
-    position: relative;    
+const Hero = styled.header`
+    width: 1024px;
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+`
+const FullDiv = styled.div`
+    width: 100%;
+    background-color: white;
+    position: relative;  
     &:after{
         position: absolute;
         width: 100%;
@@ -18,16 +23,23 @@ const HeroContent = styled.section`
         bottom: 0;
         content: '';
         transform-origin: right bottom;
-        transform: skewY(-3deg);
+        transform: skewY(-1.5deg);
         background-color: white;
     }
+`
+const HeroContent = styled.section`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 500px;   
+    position: relative;
 `
 const ProfilePhoto = styled.img`
     width: 200px;
     height: 200px;
     border-radius: 50%;
     position: absolute;
-    left: 80px;
+    left: 70px;
     top: 20px;
     z-index: 5;
 `
@@ -35,7 +47,7 @@ const MainTitle = styled.div`
     position: absolute;
     width: 350px;
     bottom: 10%;
-    left: 30px;
+    left: 20px;
     z-index: 5;
     h1 {
         font-size: 1.7rem;
@@ -51,9 +63,9 @@ const MainTitle = styled.div`
     }
 `
 
-const Hero = ({ toggleModal }) => {
-    return (
-        <header>
+export default ({ toggleModal }) => (
+    <FullDiv>
+        <Hero>
             <Navigation />
             <HeroContent>
                 <ProfilePhoto src="/images/profile_photo.jpg" alt="Luis Enrique Solis" />
@@ -67,8 +79,7 @@ const Hero = ({ toggleModal }) => {
                 </MainTitle>
                 <TypeWriter />
             </HeroContent>
-        </header>
-    );
-}
+        </Hero>
+    </FullDiv>
+);
 
-export default Hero;

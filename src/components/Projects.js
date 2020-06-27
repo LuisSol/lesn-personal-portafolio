@@ -7,18 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Project from './Project';
 import ScrollIndicator from './ScrollIndicator'
 
-const ProjectsView = styled.section`    
-    height: 500px;
-    color: black;    
-    padding: 100px 10px 0 10px;
+const FullDiv = styled.main`
+    width: 100%;
     position: relative;
-    z-index: 1;
-    .title { 
-        position: absolute;
-        top: 3.5rem;
-        font-size: 1.7rem;
-        z-index: 5;
-    }
     &:after {
         position: absolute;        
         content: '';
@@ -28,9 +19,27 @@ const ProjectsView = styled.section`
         width: 100%;
         height: 15%;
         transform-origin: left bottom;
-        transform: skewY(-3deg);
-        z-index: -1;
-    }    
+        transform: skewY(-1.5deg);
+        z-index: 1;
+    }
+`
+const ProjectsView = styled.section`    
+    height: 500px;
+    width: 1024px;
+    margin: 0 auto;
+    color: black;    
+    padding: 100px 20px 0 20px;
+    position: relative;
+    z-index: 2;
+    .title { 
+        position: absolute;
+        top: 3.5rem;
+        font-size: 1.7rem;
+        z-index: 5;
+    }
+    @media (max-width: 1024px) {
+        width: 100%;
+    }        
 `
 const projects = [
     {
@@ -63,30 +72,28 @@ const projects = [
     },
 ]
 
-const Projects = () => {
+const Projects = () => (
+    <FullDiv>
+        <ProjectsView>
+            <h1 className="title" id="projects">Projects</h1>                
+            <Slider
+                lazyLoad="progressive"
+                slidesToShow={1}
+                slidesToScroll={1}
+                speed={400}
+                arrows={false}
+                fade="true"     
+            >
+            {
+                projects.map((project) => {
+                    return <Project key={project.id} {...project} />
+                })   
+            }
+            </Slider>
+            <ScrollIndicator top={{top: '-1rem'}} />
+        </ProjectsView>
+    </FullDiv>
+)
 
-    return (
-        <main>
-            <ProjectsView>
-                <h1 className="title" id="projects">Projects</h1>                
-                <Slider
-                    lazyLoad="progressive"
-                    slidesToShow={1}
-                    slidesToScroll={1}
-                    speed={400}
-                    arrows={false}
-                    fade="true"     
-                >
-                {
-                    projects.map((project) => {
-                        return <Project key={project.id} {...project} />
-                    })   
-                }
-                </Slider>
-                <ScrollIndicator />
-            </ProjectsView>
-        </main>
-    )
-}
 
 export default Projects;

@@ -1,35 +1,16 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import Slider from 'react-slick';
 import Skill from './Skill';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const animate = keyframes`
-    0% {
-        border-color: #EEE;
-    }
-    20% {
-        border-color: #EEE;
-    }
-    20.1%, 100% {
-        border-color: #99;
-    }
-`
+import ScrollIndicator from './ScrollIndicator'
 
-const SkillShow = styled.section`
-    height: 400px;
+const FullDiv = styled.div`
+    width: 100%;
     background-color: #232C39;
-    color: white;
-    padding: 50px 30px 0px 30px;
     position: relative;
-    z-index: 2;
-    .title { 
-        z-index: 5;
-        position: absolute;
-        top: 2.5rem;
-        font-size: 1.7rem;
-    }
     &:after{
         position: absolute;
         width: 100%;
@@ -39,76 +20,28 @@ const SkillShow = styled.section`
         content: '';
         z-index: -1;
         transform-origin: right bottom;
-        transform: skewY(3deg);
+        transform: skewY(1.5deg);
         background-color: #232C39;
     }
-    .scroll-indicator {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        top: -3rem;
-    }
-    .indicator {
-        position: relative;
-        display: inline-block;
-        width: 9px;
-        height: 9px;        
-    }
-    .indicator span{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-bottom: 2px solid #6666;
-    }
-    .left-indicator {        
-        margin-right: .5rem;        
-        transform: rotate(45deg);
-    }    
-    .left-indicator span {      
-        border-left: 2px solid #6666;
-        animation: ${animate} 3s linear infinite;
-    }
-    .left-indicator span:nth-child(1) {
-        left: -5px;
-        bottom: -5px;
-        animation-delay: 0.2s;
-    }
-    .left-indicator span:nth-child(2) {
-        left: -10px;
-        bottom: -10px;
-        animation-delay: 0.4s;
-    }
-    .left-indicator span:nth-child(3) {
-        left: -15px;
-        bottom: -15px;
-        animation-delay: 0.6s;
-    }
-    .right-indicator {           
-        margin-left: .5rem; 
-        transform: rotate(-45deg);
-    }
-    .right-indicator span{
-        border-right: 2px solid #6666;
-        animation: ${animate} 3s linear infinite;
-    }
-    .right-indicator span:nth-child(1) {
-        right: -5px;
-        bottom: -5px;
-        animation-delay: 0.2s;
-    }
-    .right-indicator span:nth-child(2) {
-        right: -10px;
-        bottom: -10px;
-        animation-delay: 0.4s;
-    }
-    .right-indicator span:nth-child(3) {
-        right: -15px;
-        bottom: -15px;
-        animation-delay: 0.6s;
-    }        
 `
-
+const SkillShow = styled.section`
+    width: 1024px;
+    height: 400px;
+    color: white;
+    padding: 50px 20px 0px 20px;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    .title { 
+        z-index: 5;
+        position: absolute;
+        top: 2.5rem;
+        font-size: 1.7rem;
+    }   
+    @media (max-width: 1024px) {
+        width: 100%;
+    }       
+`
 const skills = [
     { 
         id: 'js2020lesn',
@@ -152,9 +85,8 @@ const skills = [
     },
 ]
 
-const Skills = () => {
-
-    return (
+export default () => (
+    <FullDiv>
         <SkillShow>
             <h1 className="title" id="skills">Skills</h1>            
             <Slider
@@ -173,23 +105,7 @@ const Skills = () => {
                 skills.map(skill => <Skill key={skill.id} {...skill} />)            
             }
             </Slider>
-            <div className="scroll-indicator">
-                <div className="indicator left-indicator">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                    <small>scroll</small>
-                <div className="indicator right-indicator">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>                         
+            <ScrollIndicator top={{top: '-2rem'}}/>                             
         </SkillShow>
-    );
-}
-
-export default Skills;
+    </FullDiv>
+);
