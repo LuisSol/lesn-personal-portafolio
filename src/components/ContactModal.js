@@ -70,6 +70,8 @@ const initialValues = {
     message: '',
 }
 
+Modal.setAppElement('body');
+
 const ContactModal = () => {    
     const modalOpen = useSelector( (state) => state.modalOpen );
     const dispatch = useDispatch();

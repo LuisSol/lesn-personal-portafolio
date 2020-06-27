@@ -22,10 +22,19 @@ const HeroContent = styled.section`
         background-color: white;
     }
 `
+const ProfilePhoto = styled.img`
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    z-index: 5;
+`
 const MainTitle = styled.div`
     position: absolute;
     width: 350px;
-    bottom: 15%;
+    bottom: 10%;
     left: 30px;
     z-index: 5;
     h1 {
@@ -47,6 +56,7 @@ const Hero = ({ toggleModal }) => {
         <header>
             <Navigation />
             <HeroContent>
+                <ProfilePhoto src="/images/profile_photo.jpg" alt="Luis Enrique Solis" />
                 <MainTitle>
                     <h1>My name is Luis Enrique</h1>
                     <p>I'm a Full stack javascript developer, i love to create useful and fun to use Apps. 

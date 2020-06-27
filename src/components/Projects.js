@@ -1,31 +1,21 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Slider from 'react-slick';
-import Project from './Project';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const animate = keyframes`
-    0% {
-        border-color: #999;
-    }
-    20% {
-        border-color: #999;
-    }
-    20.1%, 100% {
-        border-color: #EEE;
-    }
-`
+import Project from './Project';
+import ScrollIndicator from './ScrollIndicator'
 
 const ProjectsView = styled.section`    
     height: 500px;
     color: black;    
-    padding: 100px 30px 0px 30px;
+    padding: 100px 10px 0 10px;
     position: relative;
     z-index: 1;
     .title { 
         position: absolute;
-        top: 2rem;
+        top: 3.5rem;
         font-size: 1.7rem;
         z-index: 5;
     }
@@ -40,92 +30,36 @@ const ProjectsView = styled.section`
         transform-origin: left bottom;
         transform: skewY(-3deg);
         z-index: -1;
-    }
-    .scroll-indicator {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        top: -1rem;
-    }
-    .indicator {
-        position: relative;
-        display: inline-block;
-        width: 9px;
-        height: 9px;        
-    }
-    .indicator span{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-bottom: 2px solid #6666;
-    }
-    .left-indicator {        
-        margin-right: .5rem;        
-        transform: rotate(45deg);
     }    
-    .left-indicator span {      
-        border-left: 2px solid #6666;
-        animation: ${animate} 3s linear infinite;
-    }
-    .left-indicator span:nth-child(1) {
-        left: -5px;
-        bottom: -5px;
-        animation-delay: 0.2s;
-    }
-    .left-indicator span:nth-child(2) {
-        left: -10px;
-        bottom: -10px;
-        animation-delay: 0.4s;
-    }
-    .left-indicator span:nth-child(3) {
-        left: -15px;
-        bottom: -15px;
-        animation-delay: 0.6s;
-    }
-    .right-indicator {           
-        margin-left: .5rem; 
-        transform: rotate(-45deg);
-    }
-    .right-indicator span{
-        border-right: 2px solid #6666;
-        animation: ${animate} 3s linear infinite;
-    }
-    .right-indicator span:nth-child(1) {
-        right: -5px;
-        bottom: -5px;
-        animation-delay: 0.2s;
-    }
-    .right-indicator span:nth-child(2) {
-        right: -10px;
-        bottom: -10px;
-        animation-delay: 0.4s;
-    }
-    .right-indicator span:nth-child(3) {
-        right: -15px;
-        bottom: -15px;
-        animation-delay: 0.6s;
-    }
 `
-
 const projects = [
     {
         id: 'lesnpro12020',
         title: 'Ahimsa',
-        github: '#',
-        link: '#',
-        detail: 'This is an app',
-        android: '',
-        ios: '',
+        github: 'https://github.com/LuisSol/ahimsa-web',
+        link: 'https://ahimsarelax.com/',
+        detail: `<p>Created with <strong>React</strong>, using <strong>Redux</strong> to maintain in syncrony the selected routine through components, <strong>CSS</strong> styling is done through <strong>Styled-components</strong> library and the animations with <strong>Framer-motion</strong> library.</p>
+        <p>The web App is hosted in Google <strong>Firebase</strong>.</p>
+        <p>Native Apps are codded in <strong>React Native</strong> with the <strong>Expo Kit SDK</strong> in order to deploy to both Apple and Google store with the same code.</p><p>All the production versions are responsive to diferent device sizes.</p>`,
+        android: '#',
+        ios: '#',
+        image: {
+            large: '/images/ahimsa_dev_lar.jpg',
+            medium: '/images/ahimsa_dev_med.jpg'
+        }
     },
     {
-        id: 'lesnpro22020',
-        title: 'Arts Gym',
+        id: 'consba2020',
+        title: 'Consultorio Bañuelos',
         github: '#',
         link: '#',
-        detail: 'This is an app',
-        android: '',
-        ios: '',
+        detail: `<p>In construction...</p>`,
+        android: '#',
+        ios: '#',
+        image: {
+            large: '/images/construction_dev_lar.jpg',
+            medium: '/images/construction_dev_med.jpg'
+        }
     },
 ]
 
@@ -136,10 +70,12 @@ const Projects = () => {
             <ProjectsView>
                 <h1 className="title" id="projects">Projects</h1>                
                 <Slider
+                    lazyLoad="progressive"
                     slidesToShow={1}
                     slidesToScroll={1}
                     speed={400}
-                    arrows={false}      
+                    arrows={false}
+                    fade="true"     
                 >
                 {
                     projects.map((project) => {
@@ -147,21 +83,7 @@ const Projects = () => {
                     })   
                 }
                 </Slider>
-                <div className="scroll-indicator">
-                    <div className="indicator left-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                        <small>scroll</small>
-                    <div className="indicator right-indicator">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>                
+                <ScrollIndicator />
             </ProjectsView>
         </main>
     )

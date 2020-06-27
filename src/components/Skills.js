@@ -158,6 +158,7 @@ const Skills = () => {
         <SkillShow>
             <h1 className="title" id="skills">Skills</h1>            
             <Slider
+                lazyLoad="progressive"
                 slidesToShow={1}
                 slidesToScroll={1}
                 arrows={false}
