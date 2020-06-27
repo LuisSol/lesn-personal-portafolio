@@ -1,6 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { toggleModal } from '../../redux/actions/modalActions'
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleModal } from '../../redux/actions/modalActions';
+import { db } from '../../firebase';
+import { toast } from 'react-toastify';
+
+const mailsRef = db.collection('mails')
 
 const useFormValidation = (initialValues, validationFunction) => {
     const [values, setValues] = useState(initialValues);
@@ -14,6 +18,28 @@ const useFormValidation = (initialValues, validationFunction) => {
         if(isSubmiting){
             if(errors.isEmpty()){
                 //send email
+                mailsRef.add({
+                    email: values.email,
+                    body: values.message,
+                    subject: values.subject
+                })
+                .then(succ => {
+                    toast.success('Thanks, i will reply you as soon as possible.', {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true
+                        });
+                })
+                .catch(err => {
+                    toast.warning('Something went wrong please try again later.', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true
+                    });
+                    console.error(err);
+                });
                 dispatch(toggleModal());
                 setValues(initialValues);
             }

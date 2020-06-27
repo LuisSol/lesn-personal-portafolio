@@ -7,6 +7,8 @@ import Contact from './components/Contact'
 import ContactModal from './components/ContactModal'
 import MobileMenu from './components/MobileMenu'
 import PDFModal from './components/PDFModal'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const MainContainer = styled.div`
   margin: 0 auto;
@@ -24,7 +26,8 @@ function App() {
       <MobileMenu />
       <Contact />
       <ContactModal />
-      <PDFModal />     
+      <PDFModal /> 
+      <ToastContainer />    
     </MainContainer>
   );
 }
