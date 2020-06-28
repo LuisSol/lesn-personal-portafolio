@@ -60,7 +60,7 @@ const projects = [
     {
         id: 'lesn22020',
         title: 'This Portafolio',
-        github: 'https://github.com/LuisSol/ahimsa-web',
+        github: 'https://github.com/LuisSol/lesn-personal-portafolio',
         link: 'https://luisenriquesolis.com/',
         detail: `<p>Recursion!!! (lol), created with <strong>React</strong> using <strong>Redux</strong> to control the pdf and contact Modals from different sibling components, speaking of wich, the Resume pdf viewer is achieved using <strong>React-pdf</strong> library. <strong>CSS</strong> styling is done through <strong>Styled-components</strong> library.</p>
         <p>The web App is hosted in Google <strong>Firebase</strong>. And the contact form is submited to a <strong>Firestore</strong> database.</p>
