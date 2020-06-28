@@ -45,7 +45,8 @@ const useFormValidation = (initialValues, validationFunction) => {
             }
             setSubmiting(false);
         }
-    }, [errors, isSubmiting, initialValues, dispatch]);
+    }, [errors, isSubmiting, initialValues, dispatch,
+        values.email, values.message, values.subject]);
 
     const handleSubmit =  (e) =>{
         e.preventDefault();

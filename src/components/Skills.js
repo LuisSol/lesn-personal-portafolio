@@ -29,8 +29,7 @@ const SkillShow = styled.section`
     height: 400px;
     color: white;
     padding: 50px 20px 0px 20px;
-    position: relative;
-    z-index: 2;
+    position: relative;    
     margin: 0 auto;
     .title { 
         z-index: 5;
@@ -57,7 +56,7 @@ const skills = [
         alt: 'node express logo',
         title: 'Node.js / Express',
         subtitle: 'Middleware, API, OAuth...',
-        detail: 'I\'m impresed by the jump of javascript from the Front End to the Back End, by embrasing the Node.js ecosystem i found a powerfull tool to build amazing apps and a never ending community of developers creating amazing npm modules.'
+        detail: 'I\'m impresed by the jump of javascript from the Front End to the Back End, by embrasing the Node.js ecosystem i found a powerfull tool to build amazing apps and a never ending community of developers creating impressive modules in npm.'
     },
     { 
         id: 'ren2020lesn',
@@ -65,7 +64,7 @@ const skills = [
         alt: 'react redux logo',
         title: 'React / React Native',
         subtitle: 'Hooks, SSR, Redux...',
-        detail: 'I just love the React library (framewotk, with the help of other libraries) i\'m totally invested in the react way of creating and composing UI/UX interfaces. I have developed all my projects in the react ecosystem for the Browser and for mobile devices with react native.'
+        detail: 'I just love the React library, i\'m totally invested in the React ecosystem. I really like the idea of developing for both Web and Native with the same syntax (jsx).'
     },
     { 
         id: 'ror2020lesn',
@@ -73,7 +72,7 @@ const skills = [
         alt: 'ruby rails logo',
         title: 'Ruby /Rails',
         subtitle: 'ActiveRecord, OAuth, API...',
-        detail: 'Although my heart belongs to the javascript ecosystem, i have experience also with the Ruby on Rails Framework, even if the javascript exosystem is more flexible, theres one thing that can\'t be denied about Rails, it just works with fewer lines of code'
+        detail: 'Although my heart belongs to javascript, i have also experience with the Ruby on Rails Framework, i think javascript is more flexible, but there\'s one thing that can\'t be denied about Rails, and it is that it gets the job done with fewer lines of code.'
     },
     { 
         id: 'htm52020lesn',
@@ -81,7 +80,7 @@ const skills = [
         alt: 'html css logo',
         title: 'HTML5 / CSS3',
         subtitle: 'Flexbox, Sass, Animations...',
-        detail: 'I belive that a successful App should look amazing, thats why i have gain strong knowledge of CSS, so my projects will not be only useful, but pretty and fun to use.'
+        detail: 'It is my belief that a successful App should look tiddy and pretty, that\'s why i have gain strong knowledge of CSS, so i can make my projects useful, pretty and fun to use.'
     },
 ]
 

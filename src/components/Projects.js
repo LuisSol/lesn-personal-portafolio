@@ -43,14 +43,14 @@ const ProjectsView = styled.section`
 `
 const projects = [
     {
-        id: 'lesnpro12020',
+        id: 'ahim12020',
         title: 'Ahimsa',
         github: 'https://github.com/LuisSol/ahimsa-web',
         link: 'https://ahimsarelax.com/',
         detail: `<p>Created with <strong>React</strong>, using <strong>Redux</strong> to maintain in syncrony the selected routine through components, <strong>CSS</strong> styling is done through <strong>Styled-components</strong> library and the animations with <strong>Framer-motion</strong> library.</p>
         <p>The web App is hosted in Google <strong>Firebase</strong>.</p>
         <p>Native Apps are codded in <strong>React Native</strong> with the <strong>Expo Kit SDK</strong> in order to deploy to both Apple and Google store with the same code.</p><p>All the production versions are responsive to diferent device sizes.</p>`,
-        android: '#',
+        android: 'https://play.google.com/store/apps/details?id=com.lesn.ahimsa',
         ios: '#',
         image: {
             large: '/images/ahimsa_dev_lar.jpg',
@@ -58,11 +58,26 @@ const projects = [
         }
     },
     {
-        id: 'consba2020',
+        id: 'lesn22020',
+        title: 'This Portafolio',
+        github: 'https://github.com/LuisSol/ahimsa-web',
+        link: 'https://luisenriquesolis.com/',
+        detail: `<p>Recursion!!! (lol), created with <strong>React</strong> using <strong>Redux</strong> to control the pdf and contact Modals from different sibling components, speaking of wich, the Resume pdf viewer is achieved using <strong>React-pdf</strong> library. <strong>CSS</strong> styling is done through <strong>Styled-components</strong> library.</p>
+        <p>The web App is hosted in Google <strong>Firebase</strong>. And the contact form is submited to a <strong>Firestore</strong> database.</p>
+        <p>This site is responsive to different devices with different screen sizes.</p>`,
+        android: '#',
+        ios: '#',
+        image: {
+            large: '/images/lesn_dev_lar.jpg',
+            medium: '/images/lesn_dev_med.jpg'
+        }
+    },
+    {
+        id: 'consba3020',
         title: 'Consultorio Bañuelos',
         github: '#',
         link: '#',
-        detail: `<p>In construction...</p>`,
+        detail: `<p>Under construction...</p>`,
         android: '#',
         ios: '#',
         image: {
