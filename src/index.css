@@ -57,13 +57,13 @@ body {
 .pdf-modal {
   position: relative;
   width: 550px;
-  height: 90%;
+  height: 95%;
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;      
   border-radius: 4px;
   outline: none;
-  padding: 20px;
+  padding: 10px;
   -webkit-overflow-scrolling: touch; 
 }
 @media (max-width: 380px) {

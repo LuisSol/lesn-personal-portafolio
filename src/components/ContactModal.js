@@ -24,6 +24,10 @@ const ContactForm = styled.form`
     input {
         border: none;
         border-bottom: 1px solid #CCC;
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
     }
     input:focus, textarea:focus {
         outline: none;
